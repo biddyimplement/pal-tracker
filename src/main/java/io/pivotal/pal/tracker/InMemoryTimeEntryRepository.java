@@ -22,7 +22,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     }
 
     public TimeEntry create(TimeEntry timeEntry) {
-        TimeEntry actualTimeEntry = new TimeEntry(this.timeEntryCounter++,timeEntry.getId(),timeEntry.getProjectId(),timeEntry.getDate(),timeEntry.getHours());
+        TimeEntry actualTimeEntry = new TimeEntry(this.timeEntryCounter++,timeEntry.getProjectId(),timeEntry.getUserId(),timeEntry.getDate(),timeEntry.getHours());
         this.timeEntryMap.put(actualTimeEntry.getId(),actualTimeEntry);
         return actualTimeEntry;
     }
@@ -42,8 +42,8 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     public TimeEntry update(Long id, TimeEntry timeEntry) {
         if(this.timeEntryMap.containsKey(id)) {
             TimeEntry timeEntryToUpdate = this.timeEntryMap.get(id);
-            timeEntryToUpdate.setProjectId(timeEntry.getId());
-            timeEntryToUpdate.setUserId(timeEntry.getProjectId());
+            timeEntryToUpdate.setUserId(timeEntry.getUserId());
+            timeEntryToUpdate.setProjectId(timeEntry.getProjectId());
             timeEntryToUpdate.setDate(timeEntry.getDate());
             timeEntryToUpdate.setHours(timeEntry.getHours());
             this.timeEntryMap.put(id, timeEntryToUpdate);

@@ -52,9 +52,9 @@ public class TimeEntry implements Comparable<TimeEntry> {
     private LocalDate date;
     private int hours;
 
-    public TimeEntry(long id, long projectId, LocalDate date, int hours) {
-        this.id = id;
+    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
         this.projectId = projectId;
+        this.userId = userId;
         this.date = date;
         this.hours = hours;
     }
