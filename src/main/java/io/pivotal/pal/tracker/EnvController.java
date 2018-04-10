@@ -31,7 +31,7 @@ public class EnvController {
 
     }
 
-    public EnvController(@Value("${PORT}") String port, @Value("${MEMORY_LIMIT}") String memoryLimit, @Value("${CF_INSTANCE_INDEX}") String cfInstanceIndex, @Value("${CF_INSTANCE_ADDR}") String cfInstanceAddress) {
+    public EnvController(@Value("${PORT:NOT SET}") String port, @Value("${MEMORY_LIMIT:NOT SET}") String memoryLimit, @Value("${CF_INSTANCE_INDEX:NOT SET}") String cfInstanceIndex, @Value("${CF_INSTANCE_ADDR:NOT SET}") String cfInstanceAddress) {
                 this.port = port;
                 this.memoryLimit = memoryLimit;
                 this.cfInstanceIndex = cfInstanceIndex;
