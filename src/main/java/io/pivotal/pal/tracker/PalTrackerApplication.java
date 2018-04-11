@@ -11,6 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
+import javax.sql.DataSource;
+import javax.xml.crypto.Data;
+
 @SpringBootApplication
 public class PalTrackerApplication {
 
@@ -21,10 +24,11 @@ public class PalTrackerApplication {
 
 
     @Bean
-    public TimeEntryRepository getRepo(@Value("${SPRING_DATASOURCE_URL}") String dataSourceUrl) {
+    public TimeEntryRepository getRepo(DataSource dataSource) {
 
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUrl(dataSourceUrl);
+
+        //MysqlDataSource dataSource = new MysqlDataSource();
+        //dataSource.setUrl(dataSourceUrl);
         return new JdbcTimeEntryRepository(dataSource);
     }
 
