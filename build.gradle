@@ -32,14 +32,13 @@ test.environment([
         "SPRING_DATASOURCE_URL": testDbUrl,
 ])
 
-/*flyway {
+flyway {
     url = developmentDbUrl
     user = "tracker"
     password = ""
     locations = ["filesystem:databases/tracker/migrations"]
-}*/
+}
 
-/*
 task testMigrate(type: FlywayMigrateTask) {
     url = testDbUrl
-}*/
+}
