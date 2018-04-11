@@ -29,7 +29,8 @@ public class PalTrackerApplication {
 
         //MysqlDataSource dataSource = new MysqlDataSource();
         //dataSource.setUrl(dataSourceUrl);
-        return new JdbcTimeEntryRepository(dataSource);
+        //return new JdbcTimeEntryRepository(dataSource);
+        return new InMemoryTimeEntryRepository();
     }
 
 
